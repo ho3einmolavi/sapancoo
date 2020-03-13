@@ -48,6 +48,10 @@ Route::group(['prefix' => '{locale}' , 'middleware' => 'setLocale'] ,function ()
     //products
     Route::get('/products' , 'ProductController@index')->name('products');
 
+    //services
+    Route::get('/service/{id}' , 'ServiceController@index')->name('service');
+    Route::get('/test' , 'ServiceController@test');
+
 });
 
 
@@ -88,6 +92,13 @@ Route::prefix('/admin')->group(function () {
     Route::get('/products-list' , 'ProductController@show');
     Route::get('/edit/product/{id}' , 'ProductController@edit');
     Route::post('/edit/product/{id}' , 'ProductController@update');
+
+    //services
+    Route::get('/create/service' , 'ServiceController@create');
+    Route::post('/create/service' , 'ServiceController@store');
+    Route::get('/services-list' , 'ServiceController@show');
+    Route::get('/edit/service/{id}' , 'ServiceController@edit');
+    Route::post('/edit/service/{id}' , 'ServiceController@update');
 });
 
 //delete

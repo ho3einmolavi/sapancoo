@@ -104,6 +104,8 @@
                     <a href="/admin/blogs-list" class="list-group-item list-group-item-action"><i class="fas fa-address-card"></i>   مقالات <i class="fas fa-angle-left icon-left"></i></a>
                     <a href="/admin/create/news" class="list-group-item list-group-item-action"><i class="fas fa-align-justify"></i>افزودن خبر <i class="fas fa-angle-left icon-left"></i></a>
                     <a href="/admin/news-list" class="list-group-item list-group-item-action"><i class="fas fa-align-justify"></i>اخبار <i class="fas fa-angle-left icon-left"></i></a>
+                    <a href="/admin/create/service" class="list-group-item list-group-item-action"><i class="fas fa-align-justify"></i>افزودن خدمات <i class="fas fa-angle-left icon-left"></i></a>
+                    <a href="/admin/services-list" class="list-group-item list-group-item-action"><i class="fas fa-align-justify"></i> خدمات <i class="fas fa-angle-left icon-left"></i></a>
                     <a href="/admin/create/product" class="list-group-item list-group-item-action"><i class="fas fa-align-justify"></i>افزودن محصول <i class="fas fa-angle-left icon-left"></i></a>
                     <a href="/admin/products-list" class="list-group-item list-group-item-action"><i class="fas fa-align-justify"></i> محصولات <i class="fas fa-angle-left icon-left"></i></a>
                     <a href="/admin/create/slide-show" class="list-group-item list-group-item-action"><i class="fab fa-product-hunt"></i> افزودن اسلایدشو  <i class="fas fa-angle-left icon-left"></i></a>
@@ -125,6 +127,8 @@
                     <a href="/admin/create/product" class="list-group-item list-group-item-action"><i class="fas fa-align-justify"></i></a>
                     <a href="/admin/products-list" class="list-group-item list-group-item-action"><i class="fas fa-align-justify"></i></a>
                     <a href="/admin/create/slide-show" class="list-group-item list-group-item-action"><i class="fab fa-product-hunt"></i></a>
+                    <a href="/admin/create/service" class="list-group-item list-group-item-action"><i class="fab fa-product-hunt"></i></a>
+                    <a href="/admin/services-list" class="list-group-item list-group-item-action"><i class="fab fa-product-hunt"></i></a>
                     <a href="/admin/create/gallery" class="list-group-item list-group-item-action"><i class="fab fa-adversal"></i></a>
                     <a href="/admin/gallery-list" target="_blank" class="list-group-item list-group-item-action"><i class="fab fa-adversal"></i></a>
                     <a href="/admin/setting" class="list-group-item list-group-item-action"><i class="fas fa-align-center"></i></a>

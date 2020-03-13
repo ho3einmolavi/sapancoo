@@ -71,62 +71,58 @@
         </div>
         <!--end-slideshow-->
         <!--services--->
+
+        @php
+            $products = \App\Product::latest('id')->take(5)->get();
+            $services = \App\Service::latest('id')->take(5)->get();
+
+            foreach ($services as $service)
+            {
+                $titles = explode(',' , $service->title);
+                $descriptions = explode(',' , $service->description);
+                $images = explode(',' , $service->image);
+                $service['title'] = $titles[0];
+                $service['description'] = $descriptions[0];
+                $service['image'] = $images[0];
+            }
+        @endphp
         <center>
             <div class="col col-xs col-md- col-lg- col-xl-12 services-main delete-padding">
                 <div class="col col-xs col-md- col-lg- col-xl-12 services-main-subject">
                     <span class="text-gray"> @lang('header.service') </span>
                 </div>
                 <div class="col col-xs col-md- col-lg- col-xl-12 services-main-des flex">
-                    <div class="col col-xs col-md- col-lg- col-xl-2 services-main-inside delete-padding">
-                        <a href="#">
+                    @foreach($services as $service)
+                         <div class="col col-xs col-md- col-lg- col-xl-2 services-main-inside delete-padding">
+                        <a href="{{ route('service' , [request()->route('locale') , $service['id']]) }}">
                             <div class="col col-xs col-md- col-lg- col-xl-12 services-main-inside-top delete-padding">
-                                <img src="/img/body-index/services/services1.png">
+                                <img src="/images/services/{{ $service['image'] }}">
                             </div>
                             <div class="col col-xs col-md- col-lg- col-xl-12 services-main-inside-bottom delete-padding">
-                                <p class="font-size text-gray">  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
+                                <p class="font-size text-gray">  {{ substr($service['description'] , 0 , 100) }} ... </p>
                             </div>
                         </a>
                     </div>
-                    <div class="col col-xs col-md- col-lg- col-xl-2 services-main-inside delete-padding">
-                        <a href="#">
-                            <div class="col col-xs col-md- col-lg- col-xl-12 services-main-inside-top delete-padding">
-                                <img src="/img/body-index/services/services2.png">
-                            </div>
-                            <div class="col col-xs col-md- col-lg- col-xl-12 services-main-inside-bottom delete-padding">
-                                <p class="font-size text-gray">  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col col-xs col-md- col-lg- col-xl-2 services-main-inside delete-padding">
-                        <a href="#">
-                            <div class="col col-xs col-md- col-lg- col-xl-12 services-main-inside-top delete-padding">
-                                <img src="/img/body-index/services/services3.png">
-                            </div>
-                            <div class="col col-xs col-md- col-lg- col-xl-12 services-main-inside-bottom delete-padding">
-                                <p class="font-size text-gray">  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col col-xs col-md- col-lg- col-xl-2 services-main-inside delete-padding">
-                        <a href="#">
-                            <div class="col col-xs col-md- col-lg- col-xl-12 services-main-inside-top delete-padding">
-                                <img src="/img/body-index/services/services4.png">
-                            </div>
-                            <div class="col col-xs col-md- col-lg- col-xl-12 services-main-inside-bottom delete-padding">
-                                <p class="font-size text-gray">  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col col-xs col-md- col-lg- col-xl-2 services-main-inside delete-padding">
-                        <a href="#">
-                            <div class="col col-xs col-md- col-lg- col-xl-12 services-main-inside-top delete-padding">
-                                <img src="/img/body-index/services/services5.png">
-                            </div>
-                            <div class="col col-xs col-md- col-lg- col-xl-12 services-main-inside-bottom delete-padding">
-                                <p class="font-size text-gray">  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
-                            </div>
-                        </a>
-                    </div>
+                    @endforeach
+                </div>
+            </div>
+            <div class="col col-xs col-md- col-lg- col-xl-12 services-main delete-padding">
+                <div class="col col-xs col-md- col-lg- col-xl-12 services-main-subject">
+                    <span class="text-gray"> @lang('header.products') </span>
+                </div>
+                <div class="col col-xs col-md- col-lg- col-xl-12 services-main-des flex">
+                    @foreach($products as $product)
+                        <div class="col col-xs col-md- col-lg- col-xl-2 services-main-inside delete-padding">
+                            <a href="{{ route('products' , [request()->route('locale')]) }}">
+                                <div class="col col-xs col-md- col-lg- col-xl-12 services-main-inside-top delete-padding">
+                                    <img src="/images/products/{{ $product->image }}">
+                                </div>
+                                <div class="col col-xs col-md- col-lg- col-xl-12 services-main-inside-bottom delete-padding">
+                                    <p class="font-size text-gray">  {{ substr($product->description , 0 , 100) }} ... </p>
+                                </div>
+                            </a>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </center>

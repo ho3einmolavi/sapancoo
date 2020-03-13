@@ -11,7 +11,8 @@ class ProductController extends Controller
     {
         $products = Product::latest('id')->get();
         return view('products' , [
-            'products' => $products
+            'products' => $products ,
+            'title' => 'محصولات'
         ]);
     }
 
